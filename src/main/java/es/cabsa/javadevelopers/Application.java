@@ -13,11 +13,12 @@ public class Application {
 
     System.out.println("Animals in the jungle:");
 
-    String[] beanNames = ctx.getBeanDefinitionNames();
+   String[] beanNames = ctx.getBeanDefinitionNames();
     Arrays.sort(beanNames);
     for (String beanName : beanNames) {
       System.out.println(beanName);
     }
+    
   }
 
 }

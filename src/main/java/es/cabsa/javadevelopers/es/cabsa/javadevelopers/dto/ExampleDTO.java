@@ -1,5 +1,7 @@
 package es.cabsa.javadevelopers.es.cabsa.javadevelopers.dto;
 
-public class ExampleDTO {
+import java.io.Serializable;
+
+public class ExampleDTO implements Serializable {
 
 }

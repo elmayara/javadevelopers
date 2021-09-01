@@ -1,5 +1,6 @@
 package es.cabsa.javadevelopers.controller;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -18,29 +19,17 @@ import es.cabsa.javadevelopers.model.*;
 
 
 @RestController
-public class JungleController {
-	
+public class AnimalController {
+
 	@Autowired
 	private AnimalService animalService;
 	
-	@Autowired
-	private FoodService foodService;
-	  
-	@RequestMapping("/")
-	  public String index() {
-	    return "Wellcome to the Jungle!";
-	  }
-
+	
 	@RequestMapping(value="/animal", method=RequestMethod.GET)
 	  public ResponseEntity<List<Animal>> consultaAnimal(){
 			return new ResponseEntity<List<Animal>>(animalService.consulta(),HttpStatus.OK);		
 		}
 	
-	@RequestMapping(value="/food", method=RequestMethod.GET)
-	  public ResponseEntity<List<Food>> consultaFood(){
-			return new ResponseEntity<List<Food>>(foodService.consulta(),HttpStatus.OK);		
-		}
-  
 	@RequestMapping(value="/animal", method=RequestMethod.POST)
 	public ResponseEntity <Animal> insertar(@RequestBody Animal animal){ 
 		return new ResponseEntity<Animal>(animalService.insertar(animal),HttpStatus.OK);
@@ -63,5 +52,6 @@ public class JungleController {
     		return new ResponseEntity<String>("animal no existe",HttpStatus.OK);
     	}
 	}
-    
+	
+	
 }
