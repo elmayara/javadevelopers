@@ -18,6 +18,7 @@ import es.cabsa.javadevelopers.model.*;
 
 
 @RestController
+@RequestMapping(path="/jungle")
 public class JungleController {
 	
 	@Autowired
@@ -26,7 +27,7 @@ public class JungleController {
 	@Autowired
 	private FoodService foodService;
 	  
-	@RequestMapping("/")
+	@RequestMapping("/we")
 	  public String index() {
 	    return "Wellcome to the Jungle!";
 	  }
